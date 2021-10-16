@@ -5,6 +5,8 @@ import { HelloComponent } from '../../hello.component';
 import { LoginComponent } from '../../components/login/login.component';
 import { HomeComponent } from '../../components/home/home.component';
 import { AuthGuard } from '../../_helpers';
+import { AdminComponent } from '../../components/admin/admin.component';
+import { Role } from '../../_models';
 
 const routes: Routes = [
   {
@@ -13,12 +15,12 @@ const routes: Routes = [
     // component: HelloComponent,
     canActivate: [AuthGuard],
   },
-  //{
-  // path: 'admin',
-  //component: AdminComponent,
-  //canActivate: [AuthGuard],
-  //data: { roles: [Role.Admin] }
-  //},
+  {
+ path: 'admin',
+  component: AdminComponent,
+  canActivate: [AuthGuard],
+  data: { roles: [Role.Admin] }
+  },
   {
     path: 'login',
     component: LoginComponent,

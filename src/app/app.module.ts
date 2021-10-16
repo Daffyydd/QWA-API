@@ -9,10 +9,11 @@ import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor, fakeBackendProvider, JwtInterceptor } from './_helpers';
 import { HomeComponent } from './components/home/home.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   imports:      [ BrowserModule, ReactiveFormsModule,AppRoutingModule, HttpClientModule],
-  declarations: [ AppComponent, HelloComponent,LoginComponent,HomeComponent ],
+  declarations: [ AppComponent, HelloComponent,LoginComponent,HomeComponent,AdminComponent ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
